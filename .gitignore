@@ -209,6 +209,9 @@ __marimo__/
 # Worktrees
 .worktrees/
 
+# Orchestrator
+orchestrator/
+
 # Vim swap files
 *.swp
 *.swo
