@@ -6,30 +6,39 @@ build-backend = "hatchling.build"
 name = "click-completion-cmd"
 version = "0.0.0"
 description = "Add a completion subcommand to Click CLI utilities to generate shell completion scripts."
+readme = "README.md"
 authors = [
     { name = "Sébastien De Revière", email = "contact@sderev.com" }
 ]
 license = "Apache-2.0"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 dependencies = [
-    "click>=8.0",
+    "click>=8.1",
 ]
 classifiers = [
-    "Development Status :: 1 - Planning",
+    "Development Status :: 3 - Alpha",
     "Environment :: Console",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: System :: Shells",
 ]
+
 keywords = ["click", "shell", "completion", "bash", "zsh", "fish", "cli"]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [".ci/", ".git", ".github/", ".worktrees/", "orchestrator/", "tests/", "uv.lock"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["click_completion_cmd"]
 
 [project.urls]
 Homepage = "https://github.com/sderev/click-completion-cmd"
